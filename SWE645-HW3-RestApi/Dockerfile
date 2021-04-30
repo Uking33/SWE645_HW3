@@ -19,7 +19,7 @@ ENV PATH $PATH:$JAVA_HOME/bin:$CATALINA_HOME/bin
 #ENV CLASSPATH $CLASSPATH:${JAVA_HOME}/lib:$CATALINA_HOME/lib
 #RestApi
 COPY RestApi.war /usr/local/tomcat/webapps/
-RUN chmod -R 755 /usr/local/tomcat/webapps/RestApi
+RUN chmod -R 755 /usr/local/tomcat/webapps/
 #RUN
 EXPOSE 8080
 CMD ["./usr/local/tomcat/bin/catalina.sh","run"] && tail -f /usr/local/tomcat/logs/catalina.out 
