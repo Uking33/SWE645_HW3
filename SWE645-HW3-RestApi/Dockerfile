@@ -21,4 +21,4 @@ COPY RestApi.war /usr/local/tomcat/webapps/
 #RUN
 EXPOSE 8080
 CMD unset CATALINA_HOME
-CMD /usr/local/tomcat/bin/catalina.sh run
+CMD bash /usr/local/tomcat/bin/startup.sh
