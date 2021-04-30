@@ -38,7 +38,7 @@ pipeline {
             steps {
                 script {
 			dir("./SWE645-HW3-RestApi/"){
-			    sh 'chmod -r 755 ./'
+			    sh 'chmod -R 755 ./'
 			    sh 'rm -rf Temp'
 			    sh 'mkdir Temp'
 			    sh 'ls -lh'
