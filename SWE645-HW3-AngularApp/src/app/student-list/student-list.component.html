@@ -1,0 +1,72 @@
+<div class="top">
+    <h1 class="heading">Welcome to Yuqin Li's GMU SWE645-HW3</h1>
+    <div><ul>
+        <li><a (click)="data.setSurveyFlag()">CS Department Survey</a></li>
+        <li><a (click)="data.setStudentListFlag()">Student List</a></li>
+    </ul></div>
+    <h5 id="welcome"></h5>
+    <div id="rename"></div>
+</div>
+<div class="line"></div>
+<div class="content">
+    <form method="get" #searchForm="ngForm" (ngSubmit)="search(searchForm.value)" >
+        <p>
+            <input type="text" value="" name="uid" style="width:85%;margin-right:5%;height:40px;" ngModel>
+            <input type="submit" value="Search" class="w3-btn btn"/>
+        </p>
+    </form>
+    <div class="table-block">
+        <table>
+            <tr>
+                <th class="table-title">Uid</th>
+                <th class="table-title">Name</th>
+                <th class="table-title">Address</th>
+                <th class="table-title">State</th>
+                <th class="table-title">City</th>
+                <th class="table-title">Zip</th>
+                <th class="table-title">Email</th>
+                <th class="table-title">Tel</th>
+                <th class="table-title">Url</th>
+                <th class="table-title">Interested on campus</th>
+                <th class="table-title">Like on campus </th>
+                <th class="table-title">High school graduation</th>
+                <th class="table-title">Recommending Level</th>
+                <th class="table-title">Submit date</th>
+            </tr>
+            <tbody>
+                <tr *ngFor="let stu of list">
+                    <td class='table-item3'>{{stu.uid}}</td>
+                    <td class='table-item3'>{{stu.name}}</td>
+                    <td class='table-item3'>{{stu.address}}</td>
+                    <td class='table-item3'>{{stu.state}}</td>
+                    <td class='table-item3'>{{stu.city}}</td>
+                    <td class='table-item3'>{{stu.zip}}</td>
+                    <td class='table-item3'>{{stu.email}}</td>
+                    <td class='table-item3'>{{stu.tel}}</td>
+                    <td class='table-item3'>{{stu.url}}</td>
+                    <td class='table-item3'>{{stu.interested}}</td>
+                    <td class='table-item3'>{{stu.liked}}</td>
+                    <td class='table-item3'>{{stu.month + stu.year}}</td>
+                    <td class='table-item3'>{{stu.recommending}}</td>
+                    <td class='table-item3'>{{stu.date}}</td>
+                </tr>
+                <tr *ngFor="let in of counter()">
+                    <td class='table-item3'></td>
+                    <td class='table-item3'></td>
+                    <td class='table-item3'></td>
+                    <td class='table-item3'></td>
+                    <td class='table-item3'></td>
+                    <td class='table-item3'></td>
+                    <td class='table-item3'></td>
+                    <td class='table-item3'></td>
+                    <td class='table-item3'></td>
+                    <td class='table-item3'></td>
+                    <td class='table-item3'></td>
+                    <td class='table-item3'></td>
+                    <td class='table-item3'></td>
+                    <td class='table-item3'></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

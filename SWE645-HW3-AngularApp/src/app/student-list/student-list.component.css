@@ -1,0 +1,21 @@
+/* List */
+.table-block{
+	display: flex;
+	overflow-y:scroll;
+	height: 380px;
+	--w: calc(100vw - 20px);
+}
+.table-block table,table tr th, .table-block table tr td {
+	border:1px solid #555;
+    border-spacing: 0;
+}
+.table-block table{
+}
+.table-block table tr td {
+	height: 30px;
+	padding: 5px 10px;
+}
+.table-item3 {
+	text-align: center; 
+	width: 6%;
+}
