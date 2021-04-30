@@ -7,7 +7,8 @@ import {DataExchangeService} from '../data-exchange.service';
   styleUrls: ['./student-list.component.css']
 })
 export class StudentListComponent implements OnInit {
-  url = 'http://localhost:4200/RestApi/api/list';
+  //url = 'http://localhost:4200/RestApi/api/list';
+  url = 'http://52.87.158.5:30080/RestApi/api/list';
   list: any;
   left: number | undefined;
   constructor(private http: HttpClient, public data: DataExchangeService) { }
