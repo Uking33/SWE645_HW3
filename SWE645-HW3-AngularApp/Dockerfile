@@ -6,7 +6,7 @@ FROM node:10.16.0-alpine AS build
 RUN npm install -g @angular/cli
 
 WORKDIR /src
-Run ls -a
+Run pwd
 #COPY . .
 #RUN npm install
 #RUN ng build --prod --aot --build-optimizer --output-path /app
@@ -15,6 +15,6 @@ Run ls -a
 FROM base AS final
 #COPY --from=build /app /usr/share/nginx/html
 RUN chmod 755 /etc/nginx/nginx.conf
-RUN cd .. && ls -a
+RUN pwd
 COPY -rf nginx.conf /etc/nginx/nginx.conf
 CMD ["nginx", "-g", "daemon off;"]
