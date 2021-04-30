@@ -6,7 +6,7 @@ FROM node:10.16.0-alpine AS build
 RUN npm install -g @angular/cli
 WORKDIR /src
 COPY . .
-RUN npm install
+RUN npm install --save-dev https-proxy-agent
 RUN ng build --prod --output-path /app
  
 FROM base AS final
