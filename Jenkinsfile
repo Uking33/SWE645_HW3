@@ -41,8 +41,7 @@ pipeline {
 			    sh 'rm -rf Temp'
 			    sh 'mkdir Temp'
 			    sh 'ls -lh'
-			    sh 'cp ./SWE645-HW3-RestApi/WebContent/WEB-INF ./SWE645-HW3-RestApi/Temp/WEB-INF'
-			    sh 'cp ./SWE645-HW3-RestApi/WebContent/META-INF ./SWE645-HW3-RestApi/Temp/META-INF'
+				sh 'cp ./SWE645-HW3-RestApi/WebContent/{WEB-INF,META-INF} ./SWE645-HW3-RestApi/Temp/'
 			    sh 'cp ./SWE645-HW3-RestApi/Dockerfile ./SWE645-HW3-RestApi/Temp/Dockerfile'
 			    sh 'find src -name *.java > JavaFilesList.txt'
 			    sh 'javac -classpath .:Temp/WEB-INF/lib/*  -d  Temp/WEB-INF/classes   @JavaFilesList.txt'
@@ -57,7 +56,6 @@ pipeline {
         stage('Building the RestApi Image') {
             steps {
                 script {
-                    checkout scm
 	            dir("./SWE645-HW3-RestApi/Temp/"){
        			sh 'cp build/libs/*.war /opt/www/foobar/newest.war'
 		        sh 'jar -cvf RestApi.war -C ./ .'
