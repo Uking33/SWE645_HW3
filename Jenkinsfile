@@ -34,7 +34,7 @@ pipeline {
         }
 	
 
-	stage('Building the RestApi project'){{
+	stage('Building the RestApi project'){
             steps {
 	        dir("./SWE645-HW3-RestApi"){
 		    sh 'rm -rf Temp'
