@@ -7,7 +7,7 @@ pipeline {
 		    checkout scm
 		    sh 'echo ${BUILD_TIMESTAMP}'
 		    dir("./SWE645-HW3-AngularApp"){
-		    	sh 'docker system prune -a'
+		    	sh 'docker system prune -a | y'
 		        withCredentials([usernamePassword(credentialsId: 'docker-pass', passwordVariable: 'password', usernameVariable: 'username')]){
 		            sh "cd  | docker login -u ${username} -p ${password}"
 		        }
