@@ -14,11 +14,11 @@ RUN mv /usr/local/tomcat_9.0.45 /usr/local/tomcat
 RUN chmod -R 755 /usr/local/tomcat
 #env
 ENV JAVA_HOME /usr/local/jdk1.8.0_291
-#ENV CATALINA_HOME /usr/local/tomcat/
-#ENV PATH $PATH:$JAVA_HOME/bin:$CATALINA_HOME/bin
+ENV CATALINA_HOME /usr/local/tomcat/
+ENV PATH $PATH:$JAVA_HOME/bin:$CATALINA_HOME/bin
 #ENV CLASSPATH .:${JAVA_HOME}/lib:$CATALINA_HOME/lib
 #RestApi
-#COPY RestApi.war /usr/local/tomcat/webapps/
+COPY RestApi.war /usr/local/tomcat/webapps/
 #RUN
-#EXPOSE 8080
-#CMD ["./usr/local/tomcat/bin/catalina.sh","run"] && tail -f /usr/local/tomcat/logs/catalina.out 
+EXPOSE 8080
+CMD ["./usr/local/tomcat/bin/catalina.sh","run"] && tail -f /usr/local/tomcat/logs/catalina.out 
