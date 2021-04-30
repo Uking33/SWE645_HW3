@@ -46,7 +46,6 @@ pipeline {
 			    sh 'cp -r WebContent/WEB-INF Temp'
 			    sh 'cp -r WebContent/META-INF Temp'
 			    sh 'find src -name *.java > JavaFilesList.txt'
-			    sh 'ls Temp'
 			    sh 'javac -classpath .:Temp/WEB-INF/lib/*  -d  Temp/WEB-INF/classes   @JavaFilesList.txt'
 			    sh 'echo /cs/ > Temp/WEB-INF/classes/.gitignore'
 			    sh 'touch Temp/META-INF/war-tracker'
@@ -60,7 +59,6 @@ pipeline {
             steps {
                 script {
 	            dir("./SWE645-HW3-RestApi/Temp/"){
-       			sh 'cp build/libs/*.war /opt/www/foobar/newest.war'
 		        sh 'jar -cvf RestApi.war -C ./ .'
                         sh 'echo ${BUILD_TIMESTAMP}'
                         withCredentials([usernamePassword(credentialsId: 'docker-pass', passwordVariable: 'password', usernameVariable: 'username')]){
