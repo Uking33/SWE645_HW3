@@ -34,18 +34,20 @@ pipeline {
         }
 	
 
-	stage('Building the RestApi project'){
-	    dir("./SWE645-HW3-RestApi"){
-		sh 'rm -rf Temp'
-		sh 'mkdir Temp'
-		sh 'cp WebContent/* Temp/*'
-		sh 'cp Dockerfile Temp/Dockerfile'
-		sh 'find src -name *.java > JavaFilesList.txt'
-		sh 'javac -classpath .:./Temp/WEB-INF/lib/*  -d  ./Temp/WEB-INF/classes   @./JavaFilesList.txt'
-		sh 'echo /cs/ > ./Temp/WEB-INF/classes/.gitignore'
-		sh 'touch./Temp/META-INF/war-tracker'
-		sh 'ls Temp'
-		sh 'rm -rf JavaFilesList.txt'
+	stage('Building the RestApi project'){{
+            steps {
+	        dir("./SWE645-HW3-RestApi"){
+		    sh 'rm -rf Temp'
+		    sh 'mkdir Temp'
+		    sh 'cp WebContent/* Temp/*'
+		    sh 'cp Dockerfile Temp/Dockerfile'
+		    sh 'find src -name *.java > JavaFilesList.txt'
+		    sh 'javac -classpath .:./Temp/WEB-INF/lib/*  -d  ./Temp/WEB-INF/classes   @./JavaFilesList.txt'
+		    sh 'echo /cs/ > ./Temp/WEB-INF/classes/.gitignore'
+		    sh 'touch./Temp/META-INF/war-tracker'
+		    sh 'ls Temp'
+		    sh 'rm -rf JavaFilesList.txt'
+	        }
 	    }
 	}
         stage('Building the RestApi Image') {
