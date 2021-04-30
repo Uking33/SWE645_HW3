@@ -1,9 +1,11 @@
 FROM nginx AS base
 WORKDIR /app
 EXPOSE 80
+Run pwd
  
 FROM node:10.16.0-alpine AS build
 RUN npm install -g @angular/cli
+Run pwd
 
 WORKDIR /src
 Run pwd
