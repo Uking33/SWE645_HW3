@@ -21,4 +21,4 @@ ENV CLASSPATH .:${JAVA_HOME}/lib:$CATALINA_HOME/lib
 COPY RestApi.war /usr/local/tomcat/webapps/
 #RUN
 EXPOSE 8080
-CMD ["./usr/local/tomcat/bin/catalina.sh","run"] && tail -f /usr/local/tomcat/logs/catalina.out 
+#CMD ["./usr/local/tomcat/bin/catalina.sh","run"] && tail -f /usr/local/tomcat/logs/catalina.out 
