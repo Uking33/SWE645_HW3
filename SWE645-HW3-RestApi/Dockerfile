@@ -21,4 +21,4 @@ ENV CLASSPATH .:${JAVA_HOME}/lib:$CATALINA_HOME/lib
 COPY RestApi.war /usr/local/tomcat/webapps/
 #RUN
 EXPOSE 8080
-#CMD ["bash /usr/local/tomcat/bin/startup.sh"]
+CMD /usr/local/tomcat/bin/catalina.sh run
