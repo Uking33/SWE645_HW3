@@ -2,9 +2,10 @@
   "name": "student-survey",
   "version": "0.0.0",
   "scripts": {
-    "ng": "ng",
-    "start": "ng serve --proxy-config proxy.conf.json",
-    "build": "ng build",
+    "ng": "ng",    
+    "build": "ng build --prod --aot --build-optimizer",
+    "start:dev": "ng serve --proxy-config proxy.conf.json --open",
+    "start:aot": "ng serve --prod --aot --proxy-config proxy.conf.json --open",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
