@@ -7,13 +7,13 @@ RUN npm install -g @angular/cli
 
 WORKDIR /src
 COPY . .
-RUN npm install
+#RUN npm install
 #RUN ng build --prod --aot --build-optimizer --output-path /app
-RUN ng build --prod --output-path /app
+#RUN ng build --prod --output-path /app
  
 FROM base AS final
 #COPY --from=build /app /usr/share/nginx/html
 RUN chmod 755 /etc/nginx/nginx.conf
-RUN ls -a
+RUN cd .. && ls -a
 COPY -rf nginx.conf /etc/nginx/nginx.conf
 CMD ["nginx", "-g", "daemon off;"]
