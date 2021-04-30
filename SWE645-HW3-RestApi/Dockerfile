@@ -2,7 +2,6 @@
 FROM ubuntu:latest
 RUN apt-get update
 RUN apt-get install tar
-RUN apt-get install bzip2
 RUN apt-get install -y wget
 # JDK
 RUN mkdir /var/tmp/jdk
@@ -22,4 +21,4 @@ COPY RestApi.war /usr/local/tomcat/webapps/
 #RUN
 EXPOSE 8080
 RUN unset CATALINA_HOME
-RUN bash /usr/local/tomcat/bin/startup.sh
+CMD bash /usr/local/tomcat/bin/startup.sh
