@@ -12,6 +12,7 @@ RUN tar xzf /var/tmp/jdk-8u202-linux-x64.tar.gz -C /usr/local/ && rm -rf /var/tm
 RUN wget -P  /var/tmp http://www.lyquking.com/lib/SWE645/tomcat_9.0.45.zip
 RUN unzip -d /usr/local/ /var/tmp/tomcat_9.0.45.zip && rm -rf /var/tmp/tomcat_9.0.45.zip
 RUN mv /usr/local/tomcat_9.0.45 /usr/local/tomcat
+RUN chomod -R 755 /usr/local/tomcat
 #env
 ENV JAVA_HOME /usr/local/jdk1.8.0_202
 ENV PATH $PATH:$JAVA_HOME/bin:$CATALINA_HOME/bin
