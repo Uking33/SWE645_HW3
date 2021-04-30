@@ -14,11 +14,11 @@ RUN tar xzf /var/tmp/tomcat/apache-tomcat-9.0.45.tar.gz -C /usr/local/ && rm -rf
 RUN mv /usr/local/apache-tomcat-9.0.45 /usr/local/tomcat
 #env
 ENV JAVA_HOME /var/tmp/jdk/jdk1.8.0_202
-ENV CATALINA_HOME /usr/local/tomcat/tomcat
 ENV PATH $PATH:$JAVA_HOME/bin:$CATALINA_HOME/bin
 ENV CLASSPATH .:${JAVA_HOME}/lib:$CATALINA_HOME/lib
 #RestApi
 COPY RestApi.war /usr/local/tomcat/webapps/
 #RUN
 EXPOSE 8080
+CMD unset CATALINA_HOME
 CMD /usr/local/tomcat/bin/catalina.sh run
