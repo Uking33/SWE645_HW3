@@ -7,8 +7,7 @@ RUN npm install -g @angular/cli
 WORKDIR /src
 COPY . .
 RUN npm install
-#RUN ng build --prod --output-path /app
-RUN ng build --proxy-config proxy.conf.json --output-path /app
+RUN ng build --prod --output-path /app
 
 FROM base AS final
 COPY --from=build /app /usr/share/nginx/html
