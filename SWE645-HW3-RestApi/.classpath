@@ -25,6 +25,5 @@
 	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/jersey-media-jaxb.jar"/>
 	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/jersey-server.jar"/>
 	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/mysql-connector-java-8.0.23.jar"/>
-	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/persistence-api-1.0.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>
