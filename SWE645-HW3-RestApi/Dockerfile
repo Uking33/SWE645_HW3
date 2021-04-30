@@ -20,4 +20,4 @@ ENV PATH $PATH:$JAVA_HOME/bin:$CATALINA_HOME/bin
 COPY RestApi.war /usr/local/tomcat/webapps/
 #RUN
 EXPOSE 8080
-RUN /usr/local/tomcat/bin/startup.sh
+CMD ["/usr/local/tomcat/bin/startup.sh"]
