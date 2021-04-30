@@ -1,6 +1,7 @@
 # ./Dockerfile
 FROM ubuntu:latest
 RUN apt-get update
+RUN apt-get install tar
 RUN apt-get install -y wget
 # JDK
 RUN mkdir /var/tmp/jdk
