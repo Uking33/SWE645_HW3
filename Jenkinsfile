@@ -38,9 +38,10 @@ pipeline {
             steps {
                 script {
 			dir("./SWE645-HW3-RestApi/"){
-			    sh 'chmod -R 766 ./'
+			    sh 'chmod -R 755 ./'
 			    sh 'rm -rf Temp'
 			    sh 'mkdir Temp'
+			    sh 'chmod -R 777 Temp'
 			    sh 'ls -lh'
 			    sh 'pwd'
 			    sh 'cp ./Dockerfile ./Temp/Dockerfile'
