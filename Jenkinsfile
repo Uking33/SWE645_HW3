@@ -40,7 +40,7 @@ pipeline {
 		sh 'mkdir Temp'
 		sh 'cp WebContent/* Temp/*'
 		sh 'cp Dockerfile Temp/Dockerfile'
-		sh 'find src -name \*.java > JavaFilesList.txt'
+		sh 'find src -name *.java > JavaFilesList.txt'
 		sh 'javac -classpath .:./Temp/WEB-INF/lib/*  -d  ./Temp/WEB-INF/classes   @./JavaFilesList.txt'
 		sh 'echo /cs/ > ./Temp/WEB-INF/classes/.gitignore'
 		sh 'touch./Temp/META-INF/war-tracker'
