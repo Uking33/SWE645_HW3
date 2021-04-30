@@ -40,9 +40,10 @@ pipeline {
 			dir("./SWE645-HW3-RestApi"){
 			    sh 'rm -rf Temp'
 			    sh 'mkdir Temp'
-			    sh 'cp -f WebContent/WEB-INF Temp/WEB-INF'
-			    sh 'cp -f WebContent/META-INF Temp/META-INF'
-			    sh 'cp -f Dockerfile Temp/Dockerfile'
+			    sh 'ls ./SWE645-HW3-RestApi'
+			    sh 'cp -f ./SWE645-HW3-RestApiWebContent/WEB-INF ./SWE645-HW3-RestApiTemp/WEB-INF'
+			    sh 'cp -f ./SWE645-HW3-RestApiWebContent/META-INF ./SWE645-HW3-RestApiTemp/META-INF'
+			    sh 'cp -f ./SWE645-HW3-RestApiDockerfile Temp/Dockerfile'
 			    sh 'find src -name *.java > JavaFilesList.txt'
 			    sh 'javac -classpath .:Temp/WEB-INF/lib/*  -d  Temp/WEB-INF/classes   @JavaFilesList.txt'
 			    sh 'echo /cs/ > Temp/WEB-INF/classes/.gitignore'
