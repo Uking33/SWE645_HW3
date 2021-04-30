@@ -8,7 +8,7 @@ RUN apt-get install -y wget
 RUN mkdir /var/tmp/jdk
 RUN wget -P /var/tmp/jdk http://www.lyquking.com/lib/jdk-8u202-linux-x64.tar.gz
 RUN tar xzf /var/tmp/jdk/jdk-8u202-linux-x64.tar.gz -C /usr/local/ && rm -rf /var/tmp/jdk/jdk-8u202-linux-x64.tar.gz
-RUN ls /usr/local/jdk
+RUN ls /usr/local
 RUN mv /usr/local/jdk-8u202-linux-x64 /usr/local/jdk
 #Tomcat
 RUN mkdir /var/tmp/tomcat
