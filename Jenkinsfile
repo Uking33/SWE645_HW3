@@ -39,7 +39,7 @@ pipeline {
                     checkout scm
 	            dir("./SWE645-HW3-RestApi"){
 		        sh 'rm -rf *.war'
-		        sh 'jar -cvf Restful.war -C ./ .'
+		        sh 'jar -cvf RestApi.war -C ./ .'
                         sh 'echo ${BUILD_TIMESTAMP}'
                         withCredentials([usernamePassword(credentialsId: 'docker-pass', passwordVariable: 'password', usernameVariable: 'username')]){
 		            sh "docker login -u ${username} -p ${password}"
