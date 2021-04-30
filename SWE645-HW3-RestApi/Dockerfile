@@ -6,7 +6,7 @@ RUN apt-get install bzip2
 RUN apt-get install -y wget
 # JDK
 RUN mkdir /var/tmp/jdk
-RUN wget --no-check-certificate --no-cookies --header "Cookie: oraclelicense=accept-securebackup-cookie"  -P /var/tmp/jdk http://download.oracle.com/otn/java/jdk/8u202-b08/1961070e4c9b4e26a04e7f5a083f551e/jdk-8u202-linux-x64.tar.gz
+RUN wget -P /var/tmp/jdk http://www.lyquking.com/lib/jdk-8u202-linux-x64.tar.gz
 RUN tar xzf /var/tmp/jdk/jdk-8u202-linux-x64.tar.gz -C /usr/local/ && rm -rf /var/tmp/jdk/jdk-8u202-linux-x64.tar.gz
 RUN mv /usr/local/jdk-8u202-linux-x64 /usr/local/jdk
 RUN ls /usr/local/jdk
