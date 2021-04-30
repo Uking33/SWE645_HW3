@@ -1,5 +1,5 @@
 # ./Dockerfile
-FROM centos:7 | tomcat:9.0.45-jdk16
+FROM centos:7 | tomcat:9-jdk15
 ADD jdk1.8.0_191 /opt/jdk8
 ENV JAVA_HOME /opt/jdk8
 ENV PATH $JAVA_HOME/bin:$PATH
