@@ -42,7 +42,7 @@ pipeline {
 			    sh 'rm -rf Temp'
 			    sh 'mkdir Temp'
 			    sh 'ls -lh'
-			    sh 'pwd'/'
+			    sh 'pwd'
 			    sh 'cp ./Dockerfile ./Temp/Dockerfile'
 			    sh 'cp -r WebContent/{WEB-INF,META-INF} Temp
 			    sh 'find src -name *.java > JavaFilesList.txt'
