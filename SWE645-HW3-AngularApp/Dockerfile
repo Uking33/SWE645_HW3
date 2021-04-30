@@ -8,7 +8,7 @@ WORKDIR /src
 COPY . .
 RUN npm install
 RUN ng build --prod --output-path /app
-
+ 
 FROM base AS final
 COPY --from=build /app /usr/share/nginx/html
 CMD ["nginx", "-g", "daemon off;"]
