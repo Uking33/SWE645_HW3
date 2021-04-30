@@ -10,7 +10,7 @@ RUN tar xzf /var/tmp/jdk-8u202-linux-x64.tar.gz -C /usr/local/ && rm -rf /var/tm
 #Tomcat
 #RUN wget -P  /var/tmp http://archive.apache.org/dist/tomcat/tomcat-9/v9.0.45/bin/apache-tomcat-9.0.45.tar.gz
 RUN wget -P  /var/tmp http://www.lyquking.com/lib/SWE645/tomcat_9.0.45.zip
-RUN unzip /var/tmp/tomcat_9.0.45.zip -C /usr/local/ && rm -rf /var/tmp/tomcat_9.0.45.zip
+RUN unzip -d /usr/local/ /var/tmp/tomcat_9.0.45.zip && rm -rf /var/tmp/tomcat_9.0.45.zip
 RUN mv /usr/local/tomcat_9.0.45 /usr/local/tomcat
 #env
 ENV JAVA_HOME /usr/local/jdk1.8.0_202
