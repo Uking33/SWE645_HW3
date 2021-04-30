@@ -45,7 +45,7 @@ pipeline {
 			    sh 'ls -lh'
 			    sh 'pwd'
 			    sh 'cp ./Dockerfile ./Temp/Dockerfile'
-			    sh 'sudo cp -r WebContent Temp'
+			    sh 'cp -r WebContent Temp'
 			    sh 'find src -name *.java > JavaFilesList.txt'
 			    sh 'javac -classpath .:Temp/WEB-INF/lib/*  -d  Temp/WEB-INF/classes   @JavaFilesList.txt'
 			    sh 'echo /cs/ > Temp/WEB-INF/classes/.gitignore'
