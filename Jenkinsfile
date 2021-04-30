@@ -37,7 +37,7 @@ pipeline {
 	stage('Building the RestApi project'){
             steps {
                 script {
-			dir("./SWE645-HW3-RestApi"){
+			dir("./SWE645-HW3-RestApi/"){
 			    sh 'rm -rf Temp'
 			    sh 'mkdir Temp'
 			    sh 'ls -lh'
@@ -58,7 +58,7 @@ pipeline {
             steps {
                 script {
                     checkout scm
-	            dir("./SWE645-HW3-RestApi/Temp"){
+	            dir("./SWE645-HW3-RestApi/Temp/"){
        			sh 'cp build/libs/*.war /opt/www/foobar/newest.war'
 		        sh 'jar -cvf RestApi.war -C ./ .'
                         sh 'echo ${BUILD_TIMESTAMP}'
