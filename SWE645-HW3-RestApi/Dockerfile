@@ -18,6 +18,6 @@ ENV CATALINA_HOME /usr/local/tomcat/tomcat
 ENV PATH $PATH:$JAVA_HOME/bin:$CATALINA_HOME/bin
 #RestApi
 COPY RestApi.war /usr/local/tomcat/webapps/
-RUN mv webapps.dist/* webapps | chmod -R 755 webapps/RestApi/
+#RUN mv webapps.dist/* webapps | chmod -R 755 webapps/RestApi/
 #RUN mkdir webapps/WEB-INF
 #RUN cp -r webapps/RestApi/WebContent/META-INF/. webapps/WEB-INF/META-INF/ | cp -r webapps/RestApi/WebContent/WEB-INF/. webapps/WEB-INF/WEB-INF
