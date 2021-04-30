@@ -21,5 +21,5 @@ COPY RestApi.war /usr/local/tomcat/webapps/
 #RUN
 EXPOSE 8080
 RUN unset CATALINA_HOME
-CMD ["./var/tmp/tomcat/tomcat/bin/catalina.sh","run"] && tail -f /var/tmp/tomcat/tomcat/logs/catalina.out 
+CMD ["./usr/local/tomcat/tomcat/bin/catalina.sh","run"] && tail -f /usr/local/tomcat/tomcat/logs/catalina.out 
 #CMD bash /usr/local/tomcat/bin/startup.sh
