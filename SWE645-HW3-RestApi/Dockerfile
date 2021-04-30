@@ -5,8 +5,8 @@ RUN apt-get install tar
 RUN apt-get install unzip
 RUN apt-get install -y wget
 # JDK
-RUN wget -P /var/tmp http://www.lyquking.com/lib/SWE645/jdk-8u291-linux-aarch64.tar.gz
-RUN tar xzf /var/tmp/jdk-8u291-linux-aarch64.tar.gz -C /usr/local/ && rm -rf /var/tmp/jdk-8u291-linux-aarch64.tar.gz
+RUN wget -P /var/tmp http://www.lyquking.com/lib/SWE645/jdk-8u291-linux-x64.tar.gz
+RUN tar xzf /var/tmp/jdk-8u291-linux-x64.tar.gz -C /usr/local/ && rm -rf /var/tmp/jdk-8u291-linux-x64.tar.gz
 #Tomcat
 RUN wget -P  /var/tmp http://www.lyquking.com/lib/SWE645/tomcat_9.0.45.zip
 RUN unzip -d /usr/local/ /var/tmp/tomcat_9.0.45.zip && rm -rf /var/tmp/tomcat_9.0.45.zip
