@@ -32,13 +32,26 @@ pipeline {
 	        }
             }
         }
-	    
+	
+
+	stage('Building the RestApi project'){
+	    dir("./SWE645-HW3-RestApi"){
+		sh 'rm -rf Temp'
+		sh 'mkdir Temp'
+		sh 'cp WebContent/* Temp/*'
+		sh 'find src -name \*.java > JavaFilesList.txt'
+		sh 'javac -classpath .:./Temp/WEB-INF/lib/*  -d  ./Temp/WEB-INF/classes   @./JavaFilesList.txt'
+		sh 'echo /cs/ > ./Temp/WEB-INF/classes/.gitignore'
+		sh 'touch./Temp/META-INF/war-tracker'
+		sh 'rm -rf JavaFilesList.txt'
+	    }
+	}
         stage('Building the RestApi Image') {
             steps {
                 script {
                     checkout scm
-	            dir("./SWE645-HW3-RestApi"){
-		        sh 'rm -rf *.war'
+	            dir("./SWE645-HW3-RestApi/Temp"){
+       			sh 'cp build/libs/*.war /opt/www/foobar/newest.war'
 		        sh 'jar -cvf RestApi.war -C ./ .'
                         sh 'echo ${BUILD_TIMESTAMP}'
                         withCredentials([usernamePassword(credentialsId: 'docker-pass', passwordVariable: 'password', usernameVariable: 'username')]){
@@ -52,17 +65,13 @@ pipeline {
         stage('Pushing RestApi Image to DockerHub') {
             steps {
                 script {
-	            dir("./SWE645_HW3_RestApi"){
-                        sh 'docker push liyuqin33/restful645:${BUILD_TIMESTAMP}'
-		    }
+		    sh 'docker push liyuqin33/restful645:${BUILD_TIMESTAMP}'
                 }
             }
         }
         stage('Deloying to RestApi Rancher as pods') {
             steps {
-	        dir("./SWE645_HW3_RestApi"){
-                    sh 'kubectl set image deployment/api api=liyuqin33/restful645:${BUILD_TIMESTAMP} -n swe645-hw3'
-		}
+                sh 'kubectl set image deployment/api api=liyuqin33/restful645:${BUILD_TIMESTAMP} -n swe645-hw3'
             }
         }
     }
