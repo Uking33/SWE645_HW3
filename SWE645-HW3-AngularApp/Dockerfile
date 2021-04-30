@@ -8,8 +8,8 @@ RUN npm install -g @angular/cli
 WORKDIR /src
 COPY . .
 #RUN npm install
-RUN ng build --prod --aot --build-optimizer --output-path /app
-# RUN ng build --prod --output-path /app
+#RUN ng build --prod --aot --build-optimizer --output-path /app
+RUN ng build --prod --output-path /app
  
 FROM base AS final
 COPY --from=build /app /usr/share/nginx/html
