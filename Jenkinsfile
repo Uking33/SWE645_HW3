@@ -37,7 +37,7 @@ pipeline {
             steps {
                 script {
                     checkout scm
-	            dir("./SWE645_HW3_RestApi"){
+	            dir("./SWE645-HW3-RestApi"){
 		        sh 'rm -rf *.war'
 		        sh 'jar -cvf Restful.war -C ./ .'
                         sh 'echo ${BUILD_TIMESTAMP}'
