@@ -1,6 +1,6 @@
 FROM nginx AS base
 WORKDIR /app
-#EXPOSE 80
+EXPOSE 80
  
 FROM node:10.16.0-alpine AS build
 RUN npm install -g @angular/cli
