@@ -8,15 +8,13 @@ RUN apt-get install -y wget
 RUN mkdir /var/tmp/jdk
 RUN wget -P /var/tmp/jdk http://www.lyquking.com/lib/jdk-8u202-linux-x64.tar.gz
 RUN tar xzf /var/tmp/jdk/jdk-8u202-linux-x64.tar.gz -C /usr/local/ && rm -rf /var/tmp/jdk/jdk-8u202-linux-x64.tar.gz
-RUN ls /usr/local
-RUN mv /usr/local/jdk-8u202-linux-x64 /usr/local/jdk
 #Tomcat
 RUN mkdir /var/tmp/tomcat
 RUN wget -P  /var/tmp/tomcat http://archive.apache.org/dist/tomcat/tomcat-9/v9.0.45/bin/apache-tomcat-9.0.45.tar.gz
 RUN tar xzf /var/tmp/tomcat/apache-tomcat-9.0.45.tar.gz -C /usr/local/ && rm -rf /var/tmp/tomcat/apache-tomcat-9.0.45.tar.gz
 RUN mv /usr/local/apache-tomcat-9.0.45 /usr/local/tomcat
 #env
-ENV JAVA_HOME /usr/local/jdk
+ENV JAVA_HOME /usr/local/jdk1.8.0_202
 ENV PATH $PATH:$JAVA_HOME/bin:$CATALINA_HOME/bin
 ENV CLASSPATH .:${JAVA_HOME}/lib:$CATALINA_HOME/lib
 #RestApi
