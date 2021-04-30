@@ -1,5 +1,4 @@
 # ./Dockerfile
-FROM unbutu
 # JDK
 RUN mkdir /var/tmp/jdk
 RUN wget --no-check-certificate --no-cookies --header "Cookie: oraclelicense=accept-securebackup-cookie"  -P /var/tmp/jdk http://download.oracle.com/otn-pub/java/jdk/8u111-b14/jdk-8u111-linux-x64.tar.gz
