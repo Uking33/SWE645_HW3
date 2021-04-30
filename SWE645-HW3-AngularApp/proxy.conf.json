@@ -1,6 +1,6 @@
 {
     "/RestApi": {
-      "target": "http://localhost:8080",
+      "target": "http://52.87.158.5:30080",
       "secure": false
     }
   }
