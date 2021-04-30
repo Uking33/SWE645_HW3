@@ -6,7 +6,7 @@ FROM node:10.16.0-alpine AS build
 RUN npm install -g @angular/cli
 
 WORKDIR /src
-Run ls -a;
+Run ls -a
 #COPY . .
 #RUN npm install
 #RUN ng build --prod --aot --build-optimizer --output-path /app
