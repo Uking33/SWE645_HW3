@@ -8,8 +8,8 @@ RUN apt-get install -y wget
 RUN mkdir /var/tmp/jdk
 RUN wget -P /var/tmp/jdk http://www.lyquking.com/lib/jdk-8u202-linux-x64.tar.gz
 RUN tar xzf /var/tmp/jdk/jdk-8u202-linux-x64.tar.gz -C /usr/local/ && rm -rf /var/tmp/jdk/jdk-8u202-linux-x64.tar.gz
-RUN mv /usr/local/jdk-8u202-linux-x64 /usr/local/jdk
 RUN ls /usr/local/jdk
+RUN mv /usr/local/jdk-8u202-linux-x64 /usr/local/jdk
 #Tomcat
 RUN mkdir /var/tmp/tomcat
 RUN wget -P  /var/tmp/tomcat http://archive.apache.org/dist/tomcat/tomcat-9/v9.0.45/bin/apache-tomcat-9.0.45.tar.gz
