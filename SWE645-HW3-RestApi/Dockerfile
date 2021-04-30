@@ -2,6 +2,7 @@
 FROM ubuntu:latest
 RUN apt-get update
 RUN apt-get install tar
+RUN apt-get install unzip
 RUN apt-get install -y wget
 # JDK
 RUN wget -P /var/tmp http://www.lyquking.com/lib/SWE645/jdk-8u202-linux-x64.tar.gz
