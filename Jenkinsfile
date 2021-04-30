@@ -46,6 +46,7 @@ pipeline {
 			    sh 'cp -r WebContent Temp'
 			    sh 'chmod -R 777 Temp'
 			    sh 'find src -name *.java > JavaFilesList.txt'
+			    sh 'ls Temp/WEB-INF'
 			    sh 'javac -classpath .:Temp/WEB-INF/lib/*  -d  Temp/WEB-INF/classes   @JavaFilesList.txt'
 			    sh 'echo /cs/ > Temp/WEB-INF/classes/.gitignore'
 			    sh 'touch Temp/META-INF/war-tracker'
