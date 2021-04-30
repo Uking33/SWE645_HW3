@@ -1,6 +1,0 @@
-{
-    "/RestApi": {
-      "target": "http://52.87.158.5:30080",
-      "secure": false
-    }
-  }
